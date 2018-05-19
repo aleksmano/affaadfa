@@ -2,6 +2,8 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
+use yii\models\User;
+use yii\models\User_info;
 
 class HackatonsModel extends ActiveRecord
 {
@@ -22,7 +24,7 @@ class HackatonsModel extends ActiveRecord
                                                             LEFT JOIN cases c ON c.id_hack=h.id_hack
                                                             GROUP BY h.id_hack')->queryAll();
       $users =  HackatonsModel::getDb()->createCommand('SELECT uh.id_hack, COUNT(DISTINCT uh.id_user) AS countUsers FROM user_hack uh GROUP BY uh.id_hack')->queryAll();
-      $commands = HackatonsModel::getDb()->createCommand('SELECT uh.id_hack, COUNT( uh.id_comand) AS countCommands FROM user_hack uh  GROUP BY uh.id_hack')->queryAll();
+      $commands = HackatonsModel::getDb()->createCommand('SELECT uh.id_hack, COUNT( uh.id_command) AS countCommands FROM user_hack uh  GROUP BY uh.id_hack')->queryAll();
       $result = [];
       foreach ($hackatons as $key => $hackaton) {
         $hackaton['users'] = $users[$key]['countUsers'];
@@ -39,6 +41,7 @@ class HackatonsModel extends ActiveRecord
                     ->one();
       return $result;
     }
+  
 
 
 
