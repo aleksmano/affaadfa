@@ -3,6 +3,7 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
+use app\models\UserHackModel;
 
 class CommandsModel extends ActiveRecord
 {
@@ -19,19 +20,10 @@ class CommandsModel extends ActiveRecord
 
     public static function getHackCommands($id_hack)
     {
-      $commands = CommandsModel::getDb()->createCommand('SELECT distinct uh.id_command FROM user_hack uh WHERE uh.id_command IS NOT NULL and uh.id_hack='.$id_hack)->queryAll();
-
-      $ids_command = [];
-      if(count($commands) > 1){
-        foreach ($commands as  $command) {
-          $ids_command[] = $command['id_command'];
-        }
-      }
-
-      $cases = CommandsModel::find()
-                            ->where(['id_command' => 1])
-                            ->all();
-      return $cases;
+        $ids_command =  UserHackModel::getCommandsIdsByHack($id_hack);
+        return CommandsModel::find()
+                              ->where(['id_command' => $ids_command])
+                              ->all();
     }
 
 

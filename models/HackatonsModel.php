@@ -3,6 +3,7 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 use yii\models\User;
+use yii\models\User_info;
 
 class HackatonsModel extends ActiveRecord
 {
@@ -40,13 +41,7 @@ class HackatonsModel extends ActiveRecord
                     ->one();
       return $result;
     }
-    public function getHackUsers($id_hack)
-    {
-      $result = HackatonsModel::find()
-                    ->where(['id_hack' => $id_hack])
-                    ->one();
-      return $result;
-    }
+  
 
 
 
