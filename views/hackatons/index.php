@@ -27,7 +27,7 @@ $this->title = 'My Yii Application';
                   <p><?=$hackaton['description'] ?></p>
                   <p>Количество участников: <?=$hackaton['users']?></p>
                   <p>Количество команд: <?=$hackaton['commands']?></p>
-                  <p><a class="btn btn-success" href="<?=Url::toRoute(['hackatons/cases', 'id' => $hackaton['id_hack']]);?>">Задачи <span ><?=$hackaton['countCases']?></span></a></p>
+                  <p><a class="btn btn-success" href="<?=Url::toRoute(['hackatons/one', 'id_hack' => $hackaton['id_hack']]);?>">Задачи <span ><?=$hackaton['countCases']?></span></a></p>
               </div>
           <?php } ?>
         </div>
