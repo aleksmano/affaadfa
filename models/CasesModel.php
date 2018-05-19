@@ -16,7 +16,7 @@ class CasesModel extends ActiveRecord
         return \Yii::$app->db;
     }
 
-    public static function getAllCases($id_hack)
+    public static function getHackCases($id_hack)
     {
       $cases = CasesModel::find()
                           ->where(['id_hack' =>  $id_hack])

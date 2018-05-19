@@ -6,7 +6,7 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 
 $this->title = $hack->name;
-var_dump($hack->date)
+
 ?>
 
 <div class="site-index">
