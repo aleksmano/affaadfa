@@ -87,6 +87,10 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionProfil(){
+        
+    }
+
     /**
      * Logout action.
      *

@@ -52,7 +52,10 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
+            !Yii::$app->user->isGuest ? (
+            ['label' => 'Profil', 'url' => ['/site/profil']]
+            ) : ""
         ],
     ]);
     NavBar::end();
