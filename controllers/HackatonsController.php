@@ -8,9 +8,7 @@ class HackatonsController extends Controller
 {
     public function actionIndex()
     {
-        $model = new HackatonsModel();
-        $hackatons = $model->getAllHackatons();
-
+        $hackatons = HackatonsModel::getAllHackatons();
         return $this->render('index', [
             'hackatons' => $hackatons,
         ]);
