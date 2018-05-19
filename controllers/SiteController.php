@@ -131,7 +131,6 @@ class SiteController extends Controller
         }
     }
 
-
     public function actionSignup()
     {
         $model = new SignupForm();
