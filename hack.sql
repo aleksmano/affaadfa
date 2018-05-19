@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 19 2018 г., 01:16
+-- Время создания: Май 19 2018 г., 08:32
 -- Версия сервера: 5.7.19
 -- Версия PHP: 7.0.23
 
@@ -49,6 +49,27 @@ INSERT INTO `cases` (`id_case`, `id_hack`, `description`, `company`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `commands`
+--
+
+DROP TABLE IF EXISTS `commands`;
+CREATE TABLE IF NOT EXISTS `commands` (
+  `id_command` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `date_of_formation` date NOT NULL,
+  PRIMARY KEY (`id_command`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `commands`
+--
+
+INSERT INTO `commands` (`id_command`, `name`, `date_of_formation`) VALUES
+(1, '6 КУБИКОВ', '2018-05-19');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `hacatons`
 --
 
@@ -58,6 +79,8 @@ CREATE TABLE IF NOT EXISTS `hacatons` (
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `description` text CHARACTER SET utf8 NOT NULL,
   `date` date NOT NULL,
+  `img` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `city` varchar(255) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id_hack`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -65,9 +88,9 @@ CREATE TABLE IF NOT EXISTS `hacatons` (
 -- Дамп данных таблицы `hacatons`
 --
 
-INSERT INTO `hacatons` (`id_hack`, `name`, `description`, `date`) VALUES
-(1, 'Actum Digital Hack', 'В преддверии Петербургского международного экономического форума сообщество ACTUM проведёт в Санкт-Петербурге хакатон по созданию решений на стыке цифровых технологий и существующих отраслей экономики. С 18 по 20 мая приглашаем  междисциплинарные команды в Санкт-Петербург', '2018-05-22'),
-(2, 'Blockchain Hacaton', 'Создай свой блокчейн-проект за 36 часов, познакомься с 50+ блокчейн-специалистами, выиграй призовой фонд 200 тыс. руб.\r\n\r\nХакатон для разработчиков блокчейн-проектов\r\n120+ участников\r\n\r\n31 марта - 1 апреля 2018\r\n(с 10 утра субботы до 20.00 воскресенья)\r\n\r\nКрасный Октябрь, Bers Loft м. Кропоткинская\r\nг.Москва, Берсеневская набережная 2с1', '2018-05-31');
+INSERT INTO `hacatons` (`id_hack`, `name`, `description`, `date`, `img`, `city`) VALUES
+(1, 'Actum Digital Hack', 'В преддверии Петербургского международного экономического форума сообщество ACTUM проведёт в Санкт-Петербурге хакатон по созданию решений на стыке цифровых технологий и существующих отраслей экономики. С 18 по 20 мая приглашаем  междисциплинарные команды в Санкт-Петербург', '2018-05-22', 'images/hackatons/actum.jpg', 'Санкт-Петербург'),
+(2, 'Blockchain Hacaton', 'Создай свой блокчейн-проект за 36 часов, познакомься с 50+ блокчейн-специалистами, выиграй призовой фонд 200 тыс. руб.\r\n\r\nХакатон для разработчиков блокчейн-проектов\r\n120+ участников\r\n\r\n31 марта - 1 апреля 2018\r\n(с 10 утра субботы до 20.00 воскресенья)\r\n\r\nКрасный Октябрь, Bers Loft м. Кропоткинская\r\nг.Москва, Берсеневская набережная 2с1', '2018-05-31', 'images/hackatons/actum.jpg', 'Москва');
 
 -- --------------------------------------------------------
 
@@ -151,9 +174,19 @@ CREATE TABLE IF NOT EXISTS `user_hack` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `id_hack` int(11) NOT NULL,
-  `vinner` int(11) NOT NULL,
+  `id_comand` int(11) DEFAULT NULL,
+  `winner` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `user_hack`
+--
+
+INSERT INTO `user_hack` (`id`, `id_user`, `id_hack`, `id_comand`, `winner`) VALUES
+(1, 2, 1, 1, -1),
+(2, 1, 1, NULL, -1),
+(3, 2, 2, NULL, -1);
 
 -- --------------------------------------------------------
 
