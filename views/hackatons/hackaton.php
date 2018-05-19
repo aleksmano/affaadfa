@@ -17,8 +17,11 @@ $this->title = $hack->name;
           <p><a class="btn btn-lg btn-success" href="<?=Url::toRoute(['site/login']);?>">Не теряйте время и присоединяйтесь</a></p>
       </div>
     <?php } else {?>
+
+      <div class="container text-center">
+
       <h1><?=$hack->name?></h1>
-      <div class="your-clock"></div>
+      <div class="your-clock text-center"></div>
       <div class="btn btn-success align-center">Учавствовать</div>
       <hr>
 
@@ -29,6 +32,7 @@ $this->title = $hack->name;
         <li><a href="#users-hack" data-toggle="tab">Участники</a></li>
         <li><a href="#cases-hack" data-toggle="tab">Задания</a></li>
       </ul>
+    </div>
 
     <!-- Tab panes -->
       <div class="tab-content">
@@ -99,13 +103,17 @@ $this->title = $hack->name;
       </div>
 
         <div class="tab-pane fade" id="cases-hack">
+          <div class="row">
           <?php foreach ($cases as  $case) {?>
-          <div class="card card-block text-xs-center">
-            <h4 class="card-title"><?=$case->company?></h4>
-            <p class="card-text"></p>
-            <a href="<?=$case->linc?>" class="btn btn-primary">Перейти к документу</a>
-          </div>
+              <div class="col-sm-6">
+                <div class="card card-block">
+                  <h3 class="card-title"><?=$case->company?></h3>
+                  <p class="card-text"><?=$case->description?></p>
+                  <a href="<?=$case->linc?>" class="btn btn-primary">Перейти к документу</a>
+                </div>
+              </div>
         <?php }?>
+        </div>
         </div>
       </div>
     <?php }?>
