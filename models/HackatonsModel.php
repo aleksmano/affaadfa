@@ -29,8 +29,17 @@ class HackatonsModel extends ActiveRecord
         $hackaton['commands'] = $commands[$key]['countCommands'];
         $result[] = $hackaton;
       }
-      
       return $result;
     }
+
+    public static function getOneHackaton($id_hack)
+    {
+      $result = HackatonsModel::find()
+                    ->where(['id_hack' => $id_hack])
+                    ->one();
+      return $result;
+    }
+
+
 
 }
