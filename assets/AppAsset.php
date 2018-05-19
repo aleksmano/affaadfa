@@ -21,12 +21,27 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
-        'css/flipclock.css'
+        'css/flipclock.css',
+        // 'font-awesome/4.5.0/css/font-awesome.min.css',
+        // 'css/select2.min.css',
+        // 'css/fonts.googleapis.com.css',
+        // 'css/ace.min.css',
+        // 'css/ace-skins.min.css',
+        // 'css/ace-rtl.min.css',
     ];
     public $js = [
       'js/flipclock.min.js',
       'js/timer.js',
-      'js/hack-ajax.js'
+      'js/hack-tabs.js',
+      // 'js/ace-extra.min.js',
+      // 'js/wizard.min.js',
+      // 'js/jquery.validate.min.js',
+      // 'js/jquery-additional-methods.min.js',
+      // 'js/bootbox.js',
+      // 'js/jquery.maskedinput.min.js',
+      // 'js/select2.min.js',
+      // 'js/ace-elements.min.js',
+      // 'js/ace.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
