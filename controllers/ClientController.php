@@ -12,10 +12,8 @@ class ClientController extends Controller
         return $this->render('client');
     }
 
-    
     public function actionHelloWorld()
     {
         return 'Hello World';
     }
-
 }
