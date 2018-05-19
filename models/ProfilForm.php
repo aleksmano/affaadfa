@@ -24,7 +24,7 @@ class ProfilForm extends Model
     {
         return [
 
-            [['name', 'lastname'], 'required']
+            [['name', 'lastname','about','sex'], 'required']
 
         ];
     }
@@ -33,7 +33,7 @@ class ProfilForm extends Model
     public function getUserInfo()
     {
        return $user = User_info::find()
-            ->where(['id' => Yii::$app->user->id])
+            ->where(['id_user' => Yii::$app->user->id])
             ->one();
     }
 
@@ -44,12 +44,14 @@ class ProfilForm extends Model
             return null;
         }
 
-        $user = new User_info();
+        $user = User_info::find()
+            ->where(['id_user' => Yii::$app->user->id])
+            ->one();
         $user->name = $this->name;
         $user->lastname = $this->lastname;
-        $user->lastname = $this->lastname;
-        $user->lastname = $this->lastname;
-
+        $user->about = $this->about;
+        $user->sex = $this->sex;
+        $user->img = $this->img;
         return $user->save() ? $user : null;
     }
 }

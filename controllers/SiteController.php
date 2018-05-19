@@ -9,7 +9,9 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\SignupForm;
+use app\models\ProfilForm;
 use app\models\User;
+use app\models\User_info;
 
 class SiteController extends Controller
 {
@@ -88,7 +90,17 @@ class SiteController extends Controller
     }
 
     public function actionProfil(){
-        
+        $model = new ProfilForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->saveUserInfo()) {
+            }
+        }
+
+
+        return $this->render('profil', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -127,6 +139,9 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
+                    $user_info = new User_info();
+                    $user_info->id_user = Yii::$app->user->id ;
+                    $user_info->save();
                     return $this->goHome();
                 }
             }
