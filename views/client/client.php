@@ -1,6 +1,3 @@
-		<!-- bootstrap & fontawesome -->
-
-
 <?php
 
 /* @var $this yii\web\View */
