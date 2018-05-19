@@ -8,7 +8,8 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\SignupForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -96,6 +97,40 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionRegist()
+    {
+        $model = new Regist();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $user = new User();
+            $user ->username = $model->username;
+            $user ->email = $model->email;
+            $user->save();
+            return $this->render('index');
+        } else {
+            // либо страница отображается первый раз, либо есть ошибка в данных
+            return $this->render('entry', ['model' => $model]);
+        }
+    }
+
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
+        }
+
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
 
     /**
