@@ -1,11 +1,12 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 
 $this->title = $hack->name;
-var_dump($hack->date)
+
 ?>
 
 <div class="site-index">
@@ -16,22 +17,108 @@ var_dump($hack->date)
           <p><a class="btn btn-lg btn-success" href="<?=Url::toRoute(['site/login']);?>">Не теряйте время и присоединяйтесь</a></p>
       </div>
     <?php } else {?>
+
+      <div class="container text-center">
+
       <h1><?=$hack->name?></h1>
-      <div class="your-clock"></div>
-      <div class="btn btn-success align-center" >Учавствовать</div>
+      <div class="your-clock text-center"></div>
+      <div class="btn btn-success align-center">Учавствовать</div>
       <hr>
-      <button type="button" id="description-hack" class="btn btn-default">Описание</button>
-      <button type="button" id="commands-hack" class="btn btn-default">Команды</button>
-      <button type="button" id="users-hack" class="btn btn-default">Участники</button>
-      <button type="button" id="ceses-hack" class="btn btn-default">Задачи</button>
-      <div id="content-hack"><div>
-
-    <?php }?>
-    <div class="body-content">
 
 
-
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#description-hack" data-toggle="tab">Описание</a></li>
+        <li><a href="#commands-hack" data-toggle="tab">Команды</a></li>
+        <li><a href="#users-hack" data-toggle="tab">Участники</a></li>
+        <li><a href="#cases-hack" data-toggle="tab">Задания</a></li>
+      </ul>
     </div>
+
+    <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="description-hack"> <p width="200"><?=$hack->description?></p> </div>
+        <div class="tab-pane fade" id="commands-hack">
+          <?php foreach ($commands as  $command) {?>
+            <div class="card text-xs-center" style="margin:10px">
+              <div class="card-header">
+                Количество баллов: <?=$command->score?>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title"><?=$command->name?></h4>
+                <p class="card-text"><?=$command->description?></p>
+                <a href="#" class="btn btn-primary">Страница группы</a>
+              </div>
+              <div class="card-footer text-muted">
+                Образована: <?php Yii::$app->formatter->locale = 'ru-RU';?>
+                <?=Yii::$app->formatter->asDate($command->date_of_formation);?>
+              </div>
+          </div>
+        <?php }?>
+        </div>
+        <div class="tab-pane fade" id="users-hack">
+          <div class="row">
+            <?php foreach ($users as  $user) {?>
+                <div class="col-sm-6">
+                <div class="card card-block">
+                    <?= Html::img("@web/$user->img", ['alt' => 'Инкогнито', 'width' => '200']) ?>
+                    <div class="card-block">
+                      <h4 class="card-title"><?=$user->name." ".$user->lastname?></h4>
+                      <p class="card-text"><?=$user->about?></p>
+                      <a href="#" class="btn btn-primary">На страницу</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="card card-block">
+                    <?= Html::img("@web/$user->img", ['alt' => 'Инкогнито', 'width' => '200']) ?>
+                    <div class="card-block">
+                      <h4 class="card-title"><?=$user->name." ".$user->lastname?></h4>
+                      <p class="card-text"><?=$user->about?></p>
+                      <a href="#" class="btn btn-primary">На страницу</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="card card-block">
+                    <?= Html::img("@web/$user->img", ['alt' => 'Инкогнито', 'width' => '200']) ?>
+                    <div class="card-block">
+                      <h4 class="card-title"><?=$user->name." ".$user->lastname?></h4>
+                      <p class="card-text"><?=$user->about?></p>
+                      <a href="#" class="btn btn-primary">На страницу</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="card card-block">
+                    <?= Html::img("@web/$user->img", ['alt' => 'Инкогнито', 'width' => '200']) ?>
+                    <div class="card-block">
+                      <h4 class="card-title"><?=$user->name." ".$user->lastname?></h4>
+                      <p class="card-text"><?=$user->about?></p>
+                      <a href="#" class="btn btn-primary">На страницу</a>
+                    </div>
+                  </div>
+                </div>
+          <?php }?>
+        </div>
+      </div>
+
+        <div class="tab-pane fade" id="cases-hack">
+          <div class="row">
+          <?php foreach ($cases as  $case) {?>
+              <div class="col-sm-6">
+                <div class="card card-block">
+                  <h3 class="card-title"><?=$case->company?></h3>
+                  <p class="card-text"><?=$case->description?></p>
+                  <a href="<?=$case->linc?>" class="btn btn-primary">Перейти к документу</a>
+                </div>
+              </div>
+        <?php }?>
+        </div>
+        </div>
+      </div>
+    <?php }?>
+
+
 </div>
 <script type="text/javascript">
     var hack_time = <?=json_encode($hack->date)?>
