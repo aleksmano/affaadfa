@@ -2,8 +2,7 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
-use yii\models\User;
-use yii\models\User_info;
+
 
 class HackatonsModel extends ActiveRecord
 {

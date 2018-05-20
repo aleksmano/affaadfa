@@ -25,7 +25,7 @@ use yii\helpers\URL;
     								<!-- PAGE CONTENT BEGINS -->
     								<div class="widget-box">
     									<div class="widget-header widget-header-blue widget-header-flat">
-    										<h4 class="widget-title lighter">CheckPoints</h4>
+    										<h4 class="widget-title lighter">Маршрутная карта проетка</h4>
     									</div>
     									<div class="widget-body">
     										<div class="widget-main">
@@ -33,27 +33,31 @@ use yii\helpers\URL;
     												<div>
     													<ul class="steps">
                                                             <li data-step="1" class="active">
-    															<span class="step">1</span>
-    															<span class="title">CheckPoint</span>
+    															<span class="step">0</span>
+    															<span class="title">Установка плана</span>
     														</li>
     														<li data-step="2" class="active">
-    															<span class="step">2</span>
+    															<span class="step">1</span>
     															<span class="title">CheckPoint</span>
     														</li>
 
     														<li data-step="3">
-    															<span class="step">3</span>
+    															<span class="step">2</span>
     															<span class="title">CheckPoint</span>
     														</li>
 
     														<li data-step="4">
-    															<span class="step">4</span>
+    															<span class="step">3</span>
     															<span class="title">CheckPoint</span>
     														</li>
+															<li data-step="5">
+																<span class="step">4</span>
+																<span class="title">CheckPoint</span>
+															</li>
 
-    														<li data-step="5">
+    														<li data-step="6">
     															<span class="step">5</span>
-    															<span class="title">CheckPoint</span>
+    															<span class="title">Все!</span>
     														</li>
     													</ul>
     												</div>
@@ -61,180 +65,144 @@ use yii\helpers\URL;
     										<div class="step-content pos-rel">
                                             <div class="step-pane" data-step="1">
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label no-padding-top" for="duallist" style="color:blue">  MANAGMENT (BUSINESS) </label>
-
+													<h3 class="col-sm-10 control-label no-padding-top" for="duallist" style="color:blue">Основные данные о проекте</h3>
                 										<div class="col-sm-12">
                                                             <div class="hr hr-2 hr-dotted"></div>
                 											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                 <div class="box1 col-md-6">
+                                                                 <div class="box1 col-md-10">
                                                                       <span class="info-container">
-                                                                           <span class="info">FeildInputName_1</span>
+                                                                           <span class="info">Какую проблему Вы решаете?</span>
                                                                          </span>
                                                                           <input class="filter form-control" type="text" placeholder="...">
-                                                                     </div>
-                                                                 <div class="box2 col-md-6">
-                                                                     <span class="info-container">
-                                                                     <span class="info">FeildInputName_2</span>
-                                                                 </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                     </div>
-                                                                     </div>
+																 </div>
+
+                                                            </div>
                 										</div>
                 								</div>
                                                 <div class="form-group">
                     										<div class="col-sm-12">
                     											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                     <div class="box1 col-md-6">
+                                                                     <div class="box1 col-md-10">
                                                                           <span class="info-container">
-                                                                               <span class="info">FeildInputName_3</span>
+                                                                               <span class="info">В чем ваша особенность?</span>
                                                                              </span>
                                                                               <input class="filter form-control"  type="text" placeholder="...">
-                                                                         </div>
-                                                                     <div class="box2 col-md-6">
-                                                                         <span class="info-container">
-                                                                         <span class="info">FeildInputName_4</span>
-                                                                     </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                         </div>
-                                                                         </div>
+																	 </div>
+
+																</div>
                     									</div>
                     							</div>
                                                 <div class="form-group">
                         										<div class="col-sm-12">
                         											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                         <div class="box1 col-md-6">
+                                                                         <div class="box1 col-md-10">
                                                                               <span class="info-container">
-                                                                                   <span class="info">FeildInputName_5</span>
+                                                                                   <span class="info">Сколько будует стоить внедрени?</span>
                                                                                  </span>
                                                                                   <input class="filter form-control"  type="text" placeholder="...">
-                                                                             </div>
-                                                                         <div class="box2 col-md-6">
-                                                                             <span class="info-container">
-                                                                             <span class="info">FeildInputName_6</span>
-                                                                         </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                             </div>
-                                                                             <div ></div>
-                                                                             </div>
+																		 </div>
+																	</div>
                         										</div>
-                        							</div>
-                                                    <div class="form-group">
-                                                                <label class="col-sm-3 control-label no-padding-top" for="duallist" style="margin-top: 10px; color:blue"> PROGRAMMING </label>
-                            										<div class="col-sm-12">
-                                                                        <div class="hr hr-2 hr-dotted"></div>
-                            											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                             <div class="box1 col-md-6">
-                                                                                  <span class="info-container">
-                                                                                       <span class="info">FeildInputName_7</span>
-                                                                                     </span>
-                                                                                      <input class="filter form-control"  type="text" placeholder="...">
-                                                                                 </div>
-                                                                             <div class="box2 col-md-6">
-                                                                                 <span class="info-container">
-                                                                                 <span class="info">FeildInputName_8</span>
-                                                                             </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                                 </div>
-                                                                                 </div>
-                            										</div>
-                            							</div>
-                                                        <div class="form-group">
-                                										<div class="col-sm-12">
-                                											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                                 <div class="box1 col-md-6">
-                                                                                      <span class="info-container">
-                                                                                           <span class="info">FeildInputName_9</span>
-                                                                                         </span>
-                                                                                          <input class="filter form-control"  type="text" placeholder="...">
-                                                                                     </div>
-                                                                                 <div class="box2 col-md-6">
-                                                                                     <span class="info-container">
-                                                                                     <span class="info">FeildInputName_10</span>
-                                                                                 </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                                     </div>
-                                                                                     </div>
-                                										   </div>
-                                							</div>
-                                                            <div class="form-group">
-                                    										<div class="col-sm-12">
-                                    											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                                     <div class="box1 col-md-6">
-                                                                                          <span class="info-container">
-                                                                                               <span class="info">FeildInputName_11</span>
-                                                                                             </span>
-                                                                                              <input class="filter form-control"  type="text" placeholder="...">
-                                                                                         </div>
-                                                                                     <div class="box2 col-md-6">
-                                                                                         <span class="info-container">
-                                                                                         <span class="info">FeildInputName_12</span>
-                                                                                     </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                                         </div>
-                                                                                         </div>
-                                    										</div>
-                                    							</div>
+												</div>
+												<div class="form-group">
+													<div class="col-sm-12">
+														<div class="bootstrap-duallistbox-container row moveonselect">
+															<div class="box1 col-md-10">
+                                                                              <span class="info-container">
+                                                                                   <span class="info">Какую пользу принесет Ваша идея?</span>
+                                                                                 </span>
+																<input class="filter form-control"  type="text" placeholder="...">
+															</div>
+														</div>
+													</div>
+												</div>
+
                                                                 <div class="form-group">
-                                                                            <label class="col-sm-3 control-label no-padding-top" for="duallist" style="margin-top: 10px; color:blue"> DESIGN </label>
+																	<h3 class="col-sm-10 control-label no-padding-top" for="duallist" style="color:blue">Опишите основные функци на пути к итоговому продукту, которые вы хотите реализовать</h3>
                                         										<div class="col-sm-12">
                                                                                     <div class="hr hr-2 hr-dotted"></div>
                                         											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                                         <div class="box1 col-md-6">
+                                                                                         <div class="box1 col-md-10">
                                                                                               <span class="info-container">
-                                                                                                   <span class="info">FeildInputName_13</span>
+                                                                                                   <span class="info">CheckPoint 1</span>
                                                                                                  </span>
                                                                                                   <input class="filter form-control"  type="text" placeholder="...">
-                                                                                             </div>
-                                                                                         <div class="box2 col-md-6">
-                                                                                             <span class="info-container">
-                                                                                             <span class="info">FeildInputName_14</span>
-                                                                                         </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                                             </div>
-                                                                                             </div>
+																						 </div>
+																					</div>
                                         										</div>
                                         							</div>
                                                                     <div class="form-group">
                                             										<div class="col-sm-12">
                                             											<div class="bootstrap-duallistbox-container row moveonselect">
-                                                                                             <div class="box1 col-md-6">
+                                                                                             <div class="box1 col-md-10">
                                                                                                   <span class="info-container">
-                                                                                                       <span class="info">FeildInputName_15</span>
+                                                                                                       <span class="info">CheckPoint 2</span>
                                                                                                      </span>
                                                                                                       <input class="filter form-control"  type="text" placeholder="...">
                                                                                                  </div>
-                                                                                             <div class="box2 col-md-6">
-                                                                                                 <span class="info-container">
-                                                                                                 <span class="info">FeildInputName_16</span>
-                                                                                             </span>   <input class="filter form-control" type="text" placeholder="...">
-                                                                                                 </div>
-                                                                                                 </div>
+																						</div>
                                             										</div>
-                                            							</div>
+																	</div>
+												<div class="form-group">
+													<div class="col-sm-12">
+														<div class="bootstrap-duallistbox-container row moveonselect">
+															<div class="box1 col-md-10">
+                                                                                                  <span class="info-container">
+                                                                                                       <span class="info">CheckPoint 3</span>
+                                                                                                     </span>
+																<input class="filter form-control"  type="text" placeholder="...">
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-sm-12">
+														<div class="bootstrap-duallistbox-container row moveonselect">
+															<div class="box1 col-md-10">
+                                                                                                  <span class="info-container">
+                                                                                                       <span class="info">CheckPoint 4</span>
+                                                                                                     </span>
+																<input class="filter form-control"  type="text" placeholder="...">
+															</div>
+														</div>
+													</div>
+												</div>
                                                         </div>
                                                         <div class="step-pane active" data-step="2">
                                                             <div class="center">
-    															<h3 class="blue lighter">This is CheckPoint 2</h3>
+    															<h3 class="blue lighter">Поехали! Постарайтесь выполнить ВСЕ свои цели!</h3>
     														</div>
 
     													</div>
 
     													<div class="step-pane" data-step="3">
                                                             <div class="center">
-    															<h3 class="blue lighter">This is CheckPoint 3</h3>
+    															<h3 class="blue lighter">Эксперту получил сообщение о готовности первого пункта из Вашего плана. В ближайшее время будьте готовы представить ему свои достижения</h3>
     														</div>
     													</div>
 
     													<div class="step-pane" data-step="4">
     														<div class="center">
-    															<h3 class="blue lighter">This is CheckPoint 4</h3>
+    															<h3 class="blue lighter">Эксперту получил сообщение о готовности второго пункта из Вашего плана. В ближайшее время будьте готовы представить ему свои достижения</h3>
     														</div>
     													</div>
 
     													<div class="step-pane" data-step="5">
     														<div class="center">
-    															<h3 class="green">Congrats!</h3>
-    															Your is ready! Click finish to continue!
+    															<h3 class="blue lighter">Эксперту получил сообщение о готовности третьего пункта из Вашего плана. В ближайшее время будьте готовы представить ему свои достижения</h3>
     														</div>
     													</div>
+														<div class="step-pane" data-step="6">
+															<div class="center">
+																<h3 class="green">Поздравляем! Вы справились! Эксперт скоро вынесет последнее заключение</h3>
+																<h3 class="green">Удачи на презентации!!!</h3>
+															</div>
+														</div>
     												</div>
     											</div>
 
 
-    											<div class="wizard-actions" style="margin-top: 350px;">
+    											<div class="wizard-actions" style="margin-top: 350px;" >
     												<button class="btn btn-prev">
     													<i class="ace-icon fa fa-arrow-left"></i>
     													Prev
@@ -301,6 +269,11 @@ use yii\helpers\URL;
     															<h4 class="blue">Step 4</h4>
     														</div>
     													</div>
+														<div class="step-pane" data-step="5">
+															<div class="center">
+																<h4 class="blue">Step 5</h4>
+															</div>
+														</div>
     												</div>
     											</div>
 
@@ -370,7 +343,7 @@ if('ontouchstart' in document.documentElement) document.write("<script src='asse
 				//})
 				.on('finished.fu.wizard', function(e) {
 					bootbox.dialog({
-						message: "Thank you! Your information was successfully saved!",
+						message: "Спасибо за напряженную работу!",
 						buttons: {
 							"success" : {
 								"label" : "OK",
